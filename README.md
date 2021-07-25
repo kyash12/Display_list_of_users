@@ -1,7 +1,8 @@
 # Display_list_of_users
 
-shown user list in table with dynamic pagination .
-data is fetch using axiox from api.
+Shown user list in table with dynamic pagination.
+
+Data is fetch using axiox from api.
 
 # Instructions
 
