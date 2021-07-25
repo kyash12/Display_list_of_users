@@ -8,25 +8,27 @@ class PaginationComponent extends Component {
     this.state = {
       totalRecords: 0,
       activePage: 1,
-      limit: 6
+      limit: 6,
     };
   }
   //Handle total records if comes
-  componentDidMount = nextProps => {
+  componentDidMount = (nextProps) => {
     this.setState({
-      totalRecords: nextProps ? nextProps.totalRecords : this.props.totalRecords
+      totalRecords: nextProps
+        ? nextProps.totalRecords
+        : this.props.totalRecords,
     });
   };
 
   //Handle Page Change
-  handlePageChange = page => {
+  handlePageChange = (page) => {
     this.setState({
-      activePage: page
+      activePage: page,
     });
     this.props.getAllData(page);
   };
 
-  componentWillReceiveProps = nextProps => {
+  componentWillReceiveProps = (nextProps) => {
     this.componentDidMount(nextProps);
   };
 
@@ -57,7 +59,7 @@ PaginationComponent.propTypes = {
   totalRecords: PropTypes.any,
   limit: PropTypes.any,
   activePage: PropTypes.any,
-  getAllData: PropTypes.any
+  getAllData: PropTypes.any,
 };
 
 export default PaginationComponent;
